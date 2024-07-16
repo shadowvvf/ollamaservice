@@ -5,11 +5,18 @@ import cmd
 import sys
 
 class OllamaCLI(cmd.Cmd):
-    prompt = 'ollama> '
-    
-    def __init__(self, client):
+    def __init__(self, client, host):
         super().__init__()
         self.client = client
+        self.host = host
+        self.update_prompt()
+
+    def update_prompt(self):
+        if self.host == "http://localhost:11434":
+            self.prompt = 'ollama> '
+        else:
+            parsed_url = urllib.parse.urlparse(self.host)
+            self.prompt = f'{parsed_url.hostname}> '
 
     def do_chat(self, arg):
         """Chat with a model: chat <model> <prompt>"""
