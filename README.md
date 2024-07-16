@@ -2,6 +2,8 @@
 
 This project provides a Python-based client for interacting with Ollama, an AI model server. It includes a command-line interface for easy interaction.
 
+[![](https://github-readme-stats.vercel.app/api/pin/?username=shadowvvf&repo=ollamaservice)](https://github.com/anuraghazra/github-readme-stats)
+
 ## Features
 
 - Remote server support
